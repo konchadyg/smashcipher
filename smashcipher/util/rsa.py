@@ -67,3 +67,17 @@ def factor(public_key):
     q = n / p
     private = primefac.modinv(public, (p - 1) * (q - 1))
     return build_rsa_private(n, public, private, p, q)
+
+
+def gcd(public_key1, public_key2):
+    public1 = public_key1.public_numbers().e
+    public2 = public_key2.public_numbers().e
+    n1 = public_key1.public_numbers().n
+    n2 = public_key2.public_numbers().n
+    p = primefac.gcd(n1, n2)
+    q1 = n1 / p
+    q2 = n2 / p
+    private1 = primefac.modinv(public1, (p - 1) * (q1 - 1))
+    private2 = primefac.modinv(public2, (p - 1) * (q2 - 1))
+    return (build_rsa_private(n1, public1, private1, p, q1),
+            build_rsa_private(n2, public2, private2, p, q2))
