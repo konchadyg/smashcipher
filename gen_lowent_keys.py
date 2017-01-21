@@ -1,5 +1,5 @@
 from cryptography.hazmat.primitives import serialization
-from smashcipher.util import rsa as rsa_utils
+from smashcipher.asymmetric.util import rsa as rsa_utils
 import primefac
 
 p = 111785135995915694872879065655450100824399060915246858692368272101498809780789

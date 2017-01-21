@@ -1,4 +1,4 @@
-from smashcipher import smashrsa
+from smashcipher.asymmetric import smashrsa
 
 smashrsa.lowentropy("test_keys/lowent/public-lowent1.key",
                     "test_keys/lowent/public-lowent2.key",
